@@ -155,15 +155,18 @@ include_once './configuracion/conexion.php';
                                 <label>categoria</label>
                                 <div class="input-group mb-3">
                                     <select name="categoria" id="categoria" class="form-control">
-                                        <option value="comida">comida</option>
-                                        <option value="bebida">bebida</option>
-                                        <option value="postre">postre</option>
+                                        <option value="comidas">comidas</option>
+                                        <option value="bebidas">bebidas</option>
+                                        <option value="postres">postres</option>
                                     </select>
                                 </div>
                             </div>
 
                         </div>
 
+
+                        <label>Subcategoria</label>
+                        <input type="text" id="subcategoria" name="subcategoria" class="form-control">
 
                         <label>Imagen</label>
                         <input type="file" id="imagen" name="imagen" class="form-control">
@@ -222,9 +225,9 @@ include_once './configuracion/conexion.php';
                                 <label>categoria</label>
                                 <div class="input-group mb-3">
                                   <select name="categoria" id="categoriau" class="form-control">
-                                  <option value="comida">comida</option>
-                                  <option value="bebida">bebida</option>
-                                  <option value="postre">postre</option>
+                                  <option value="comidas">comidas</option>
+                                  <option value="bebidas">bebidas</option>
+                                  <option value="postres">postres</option>
                                   </select>
                                 </div>
                             </div>
@@ -331,9 +334,9 @@ include_once './configuracion/conexion.php';
                         } else
                         if (r == 1) {
                             $("#nombre").val('').change();
-                            $("#telefono").val('').change();
-                            $("#descripcion").val('').change();
-                            $("#telefono").val('').change();
+                            $("#precio").val('').change();
+                            $("#categoria").val('').change();
+                            $("#subcategoria").val('').change();
                             $("#imagen").val('').change();
 
                             exito_agregar();
@@ -364,7 +367,7 @@ include_once './configuracion/conexion.php';
             $('#nombreu').val(d[1]);
             $('#preciou').val(d[2]);
             $('#categoriau').val(d[3]);
-            $('#fechau').val(d[4]);
+            $('#subcategoriau').val(d[4]);
 
         }
 
@@ -427,7 +430,23 @@ include_once './configuracion/conexion.php';
             });
         }
     </script>
+<!-- 
+admin 
+-----------
+usuarios (h)
+carta (h)
+pendientes (h)
+facturas (p)
+notificaciones (p)
 
+cliete
+--------------
+ver carta
+carrito
+facturas
+
+
+ -->
     <script>
         //  Notificaciones
         // -------------------------------

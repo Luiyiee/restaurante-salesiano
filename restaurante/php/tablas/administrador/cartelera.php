@@ -38,7 +38,7 @@ $conexion = conexion();
 						</thead>
 						<tbody>
 							<?php
-							$sql_query = "SELECT * FROM tb_comidas ";
+							$sql_query = "SELECT * FROM tb_carta ";
 							$result_set = mysqli_query($conexion, $sql_query);
 							$i = 1;
 							while ($ver = mysqli_fetch_array($result_set)) {
@@ -46,7 +46,7 @@ $conexion = conexion();
 									$ver['nombre'] . "||" .
 									$ver['precio'] . "||" .
 									$ver['categoria'] . "||" .
-									$ver['fecha'];
+									$ver['subcategoria'];
 							?>
 								<tr>
 									<td><?php echo $i; ?></td>
@@ -58,7 +58,7 @@ $conexion = conexion();
 									<td><?php echo $ver['precio']; ?></td>
 									<td><?php echo $ver['categoria']; ?></td>
 									<td>
-										<button class="btn btn-warning btn-small btnVer" data-id="<?php echo $ver['id']; ?>" data-nombre="<?php echo $ver['nombre']; ?>" data-precio="<?php echo $ver['precio']; ?>" data-categoria="<?php echo $ver['categoria']; ?>" data-fecha="<?php echo $ver['fecha']; ?>" data-toggle="modal" data-target="#modalVer">
+										<button class="btn btn-warning btn-small btnVer" data-id="<?php echo $ver['id']; ?>" data-nombre="<?php echo $ver['nombre']; ?>" data-precio="<?php echo $ver['precio']; ?>" data-categoria="<?php echo $ver['categoria']; ?>" data-subcategoria="<?php echo $ver['subcategoria']; ?>" data-toggle="modal" data-target="#modalVer">
 
 											<i class="fas fa-eye"></i>
 										</button>
@@ -136,9 +136,9 @@ $conexion = conexion();
 
 						<div class="col-sm-6">
 
-							<label>Fecha</label>
+							<label>subcategoria</label>
 							<div class="input-group mb-3">
-								<input type="text" class="form-control input-sm" id="fechaVer" name="fecha">
+								<input type="text" class="form-control input-sm" id="subcategoriaVer" name="fecha">
 
 							</div>
 						</div>
@@ -192,19 +192,19 @@ $conexion = conexion();
 			var nombre = $(this).data('nombre');
 			var precio = $(this).data('precio');
 			var categoria = $(this).data('categoria');
-			var fecha = $(this).data('fecha');
+			var subcategoria = $(this).data('subcategoria');
 
 			$("#nombreVer").val(nombre);
 			$("#precioVer").val(precio);
 			$("#categoriaVer").val(categoria);
-			$("#fechaVer").val(fecha);
+			$("#subcategoriaVer").val(subcategoria);
 			$("#idVer").val(idEditar);
 
 			// document.getElementById("emailVer").disabled = true;
 			document.getElementById("nombreVer").disabled = true;
 			document.getElementById("precioVer").disabled = true;
 			document.getElementById("categoriaVer").disabled = true;
-			document.getElementById("fechaVer").disabled = true;
+			document.getElementById("subcategoriaVer").disabled = true;
 
 
 		});

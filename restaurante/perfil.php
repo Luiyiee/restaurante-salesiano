@@ -161,9 +161,9 @@ if (!isset($_GET['edit_id'])) {
                                                                     ?>
                                                                     <center>  <img src="images/users/administradores/<?php echo $fetched_row['img_perfil'];?>" width="50%" height="100%" alt=""></center>
                                                                     <?php 
-                                                                }else if($_SESSION['datos_login']['nivel']=='Lider'){
+                                                                }else if($_SESSION['datos_login']['nivel']=='Cliente'){
                                                                     ?>  
-                                                                    <center>  <img src="/images/users/lideres/<?php echo $fetched_row['img_perfil']; ?>" width="50%" height="100%" alt=""></center>
+                                                                    <center>  <img src="../images/users/clientes/<?php echo $fetched_row['img_perfil']; ?>" width="50%" height="100%" alt=""></center>
                                                                     <?php
                                                                 }?>
                                                             </div>

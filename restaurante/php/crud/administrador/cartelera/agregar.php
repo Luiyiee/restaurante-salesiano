@@ -8,6 +8,8 @@ $conexion = conexion();
 $nombre = $_POST['nombre'];
 $precio = $_POST['precio'];
 $categoria = $_POST['categoria'];
+$subcategoria = $_POST['subcategoria'];
+
 $iduser = $_SESSION['datos_login']['email'];
 
 if(buscaRepetido($nombre,$conexion)==1){
@@ -26,9 +28,9 @@ echo 2;
                     $nombreFinal = time().'.'.$extension;
                     if($extension=='jpg' || $extension == 'png' || $extension == 'jpeg'){
                         if(move_uploaded_file($_FILES['imagen']['tmp_name'], $carpeta.$nombreFinal)){
-                            $sql = "INSERT into tb_comidas 
-                            (nombre,precio,categoria,imagen,fecha,idusuario)
-                    values  ('$nombre','$precio','$categoria','$nombreFinal',now(),'$iduser')";
+                            $sql = "INSERT into tb_carta 
+                            (nombre,precio,categoria,subcategoria,imagen,idusuario)
+                    values  ('$nombre','$precio','$categoria','$subcategoria','$nombreFinal','$iduser')";
                             echo $result = mysqli_query($conexion, $sql)or die($conexion->error);
                     	}else{
                             echo "no se puede subir la imagen";
@@ -43,7 +45,7 @@ echo 2;
 
 
 function buscaRepetido($nombre,$conexion){
-    $sql="SELECT * from tb_comidas  where nombre='$nombre' ";
+    $sql="SELECT * from tb_carta  where nombre='$nombre' ";
     $result=mysqli_query($conexion,$sql);
 
     if(mysqli_num_rows($result) > 0){

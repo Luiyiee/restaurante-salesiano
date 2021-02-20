@@ -26,22 +26,22 @@ $conexion = conexion();
 								<th></th>
 								<th>Foto</th>
 								<th>nombre</th>
-								<th>precio</th>
 								<th>categoria</th>
+								<th>estado</th>
 								<th>Opciones</th>
 							</tr>
 						</thead>
 						<tbody>
 							<?php
-							$sql_query = "SELECT * FROM tb_carta where categoria = 'postres' ";
+							$sql_query = "SELECT * FROM tb_pedidos where estado = 'pendiente' ";
 							$result_set = mysqli_query($conexion, $sql_query);
 							$i = 1;
 							while ($ver = mysqli_fetch_array($result_set)) {
 								$datos = $ver['id_comida'] . "||" .
 									$ver['nombre'] . "||" .
-									$ver['precio'] . "||" .
 									$ver['categoria'] . "||" .
-									$ver['subcategoria'];
+									$ver['subcategoria'] . "||" .
+									$ver['estado'];
 							?>
 								<tr>
 									<td><?php echo $i; ?></td>
@@ -50,10 +50,14 @@ $conexion = conexion();
 
 									</td>
 									<td><?php echo $ver['nombre']; ?></td>
-									<td><?php echo $ver['precio']; ?></td>
 									<td><?php echo $ver['categoria']; ?></td>
+									<td><?php echo $ver['estado']; ?></td>
 									<td>
-										<button class="btn btn-warning btn-small btnVer" data-id="<?php echo $ver['id']; ?>" data-nombre="<?php echo $ver['nombre']; ?>" data-precio="<?php echo $ver['precio']; ?>" data-categoria="<?php echo $ver['categoria']; ?>" data-subcategoria="<?php echo $ver['subcategoria']; ?>" data-toggle="modal" data-target="#modalVer">
+										<button class="btn btn-warning btn-small btnVer" data-id="<?php echo $ver['id']; ?>" data-nombre="<?php echo $ver['nombre']; ?>" data-precio="<?php echo $ver['precio']; ?>" data-categoria="<?php echo $ver['categoria']; ?>"
+                                         data-subcategoria="<?php echo $ver['subcategoria']; ?>"
+                                         data-estado="<?php echo $ver['estado']; ?>"
+                                         
+                                         data-toggle="modal" data-target="#modalVer">
 
 											<i class="fas fa-eye"></i>
 										</button>

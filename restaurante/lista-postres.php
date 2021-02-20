@@ -155,9 +155,9 @@ include_once './configuracion/conexion.php';
                                 <label>categoria</label>
                                 <div class="input-group mb-3">
                                     <select name="categoria" id="categoria" class="form-control">
-                                        <option value="comida">comida</option>
-                                        <option value="comida">bebida</option>
-                                        <option value="comida">postres</option>
+                                        <option value="comidas">comidas</option>
+                                        <option value="bebidas">bebidas</option>
+                                        <option value="postres">postres</option>
                                     </select>
                                 </div>
                             </div>
@@ -222,21 +222,25 @@ include_once './configuracion/conexion.php';
                                 <label>categoria</label>
                                 <div class="input-group mb-3">
                                   <select name="categoria" id="categoriau" class="form-control">
-                                  <option value="comida">comida</option>
-                                  <option value="bebida">bebida</option>
-                                  <option value="postre">postre</option>
+                                  <option value="comidas">comidas</option>
+                                  <option value="bebidas">bebidas</option>
+                                  <option value="postres">postres</option>
                                   </select>
                                 </div>
                             </div>
 
                             <div class="col-sm-6">
-                                <label>Imagen</label>
+                                <label>subcategoriaVer</label>
                                 <div class="input-group mb-3">
-                                    <input type="file" id="imagenu" name="imagen" class="form-control">
+                                    <input type="text" id="subcategoriau" name="subcategoriau" class="form-control">
                                 </div>
                             </div>
                         </div>
 
+                                <label>Imagen</label>
+                                <div class="input-group mb-3">
+                                    <input type="file" id="imagenu" name="imagen" class="form-control">
+                                </div>
 
 
 
@@ -314,7 +318,7 @@ include_once './configuracion/conexion.php';
             $('#nombreu').val(d[1]);
             $('#preciou').val(d[2]);
             $('#categoriau').val(d[3]);
-            $('#fechau').val(d[4]);
+            $('#subcategoriau').val(d[4]);
 
         }
 

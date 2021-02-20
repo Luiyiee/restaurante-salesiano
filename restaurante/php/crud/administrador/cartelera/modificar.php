@@ -23,12 +23,12 @@ if ($_FILES['imagen']['name'] != '') {
 	$nombreFinal = time() . '.' . $extension;
 	if ($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg') {
 		if (move_uploaded_file($_FILES['imagen']['tmp_name'], $carpeta . $nombreFinal)) {
-			$fila = $conexion->query('select imagen from tb_comidas where id_comida=' . $_POST['id']);
+			$fila = $conexion->query('select imagen from tb_carta where id_comida=' . $_POST['id']);
 			$id = mysqli_fetch_row($fila);
 			if (file_exists('../../../../images/cartelera/' . $id[0])) {
 				unlink('../../../../images/cartelera/' . $id[0]);
 			}
-			$conexion->query("update tb_comidas set imagen='" . $nombreFinal . "' where id_comida=" . $_POST['id']);
+			$conexion->query("update tb_carta set imagen='" . $nombreFinal . "' where id_comida=" . $_POST['id']);
 		} else {
 
 			echo "no se puede subir la imagen";
@@ -41,7 +41,7 @@ if (!preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/', $nombre)) {
 	echo "No se pudo actualizar el nombres $nombre <br> Ingrese solo letras ";
 	
 }  else {
-$sql = "UPDATE tb_comidas set	nombre='$nombre', precio='$precio',	categoria='$categoria',	idusuario='$iduser' where id_comida='$id_2'";
+$sql = "UPDATE tb_carta set	nombre='$nombre', precio='$precio',	categoria='$categoria',	idusuario='$iduser' where id_comida='$id_2'";
 	echo $result = mysqli_query($conexion, $sql);
 
 

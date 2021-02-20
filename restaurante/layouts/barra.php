@@ -51,35 +51,25 @@ $total_notificaciones = $total_pedidos['total_pedidos'] + $total_facturas['total
                 <div class="media">
                   <i class="zmdi zmdi-accounts fa-2x mr-3 text-info"></i>
                   <div class="media-body">
-                    <h6 class="mt-0 msg-title"> <?php echo $total_pedidos['total_pedidos'] ?> Nuevos registros</h6>
+                    <h6 class="mt-0 msg-title">  <?php echo $total_pedidos['total_pedidos']; ?> <a href="notificacion-pendientes.php"> ver pedidos </a>  </h6>
                     <!-- <p class="msg-info">Lorem ipsum dolor sit amet...</p> -->
-                  </div>
+                 </div>
                 </div>
               </a>
             </li>
-            <li class="list-group-item">
-              <a href="javaScript:void();">
-                <div class="media">
-                  <i class="zmdi zmdi-coffee fa-2x mr-3 text-warning"></i>
-                  <div class="media-body">
-                    <h6 class="mt-0 msg-title"> <?php echo $total_pedidos['total_pedidos'] ?> Nuevas peticiones</h6>
-                    <!-- <p class="msg-info">Lorem ipsum dolor sit amet...</p> -->
-                  </div>
-                </div>
-              </a>
-            </li>
+          
             <li class="list-group-item">
               <a href="javaScript:void();">
                 <div class="media">
                   <i class="zmdi zmdi-notifications-active fa-2x mr-3 text-danger"></i>
                   <div class="media-body">
-                    <h6 class="mt-0 msg-title"> <?php echo $total_pedidos['total_pedidos'] ?> Nuevos testimonios</h6>
+                    <h6 class="mt-0 msg-title"> <?php echo $total_facturas['total_facturas']; ?> <a href="notificacion-facturas.php"> ver facturas </a> </h6>
                     <!-- <p class="msg-info">Lorem ipsum dolor sit amet...</p> -->
                   </div>
                 </div>
               </a>
             </li>
-            <li class="list-group-item text-center"><a href="javaScript:void();">See All Notifications</a></li>
+           
           </ul>
         </div>
       </li>

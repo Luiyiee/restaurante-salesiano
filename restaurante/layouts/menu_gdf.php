@@ -2,13 +2,11 @@
 <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
   <div class="brand-logo">
     <a href="index.html">
-<<<<<<< HEAD
-      <img src="images/" class="logo-icon" alt="logo icon">
-      <h5 class="logo-text"> RESTAURANTE SALESIANO</h5>
-=======
+
       <img src="images/logo.jpg" class="logo-icon" alt="logo icon">
-      <h5 class="logo-text"> Restaurant</h5>
->>>>>>> c67df42690a21653c83f07af074003f17fe5bc6b
+      <h5 class="logo-text"> RESTAURANTE SALESIANO</h5>
+
+  
     </a>
   </div>
   <!-- <div class="user-details">
@@ -27,15 +25,10 @@
      </div>
       </div> -->
   <ul class="sidebar-menu do-nicescrol">
-  <br>
-  <br>
-    <!-- <li class="sidebar-header">MAIN NAVIGATION</li> -->
-    <li>
-      <a href="inicio.php" class="waves-effect">
-        <i class="zmdi zmdi-view-dashboard"></i> <span>Inicio</span>
-      </a>
-   
-    </li>
+    <br>
+    <br>
+      <!-- <li class="sidebar-header">MAIN NAVIGATION</li> -->
+    
 
     <!-- USUARIOS -->
     <br>
