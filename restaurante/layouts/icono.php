@@ -1,0 +1,1 @@
+<link rel="icon" href="images/logo.jpeg" type="image/x-icon">
