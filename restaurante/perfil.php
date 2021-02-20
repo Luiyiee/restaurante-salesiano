@@ -163,7 +163,7 @@ if (!isset($_GET['edit_id'])) {
                                                                     <?php 
                                                                 }else if($_SESSION['datos_login']['nivel']=='Cliente'){
                                                                     ?>  
-                                                                    <center>  <img src="../images/users/clientes/<?php echo $fetched_row['img_perfil']; ?>" width="50%" height="100%" alt=""></center>
+                                                                    <center>  <img src="images/users/clientes/<?php echo $fetched_row['img_perfil']; ?>" width="50%" height="100%" alt=""></center>
                                                                     <?php
                                                                 }?>
                                                             </div>

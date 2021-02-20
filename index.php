@@ -1,14 +1,18 @@
+<?php
+require_once "restaurante/php/configuracion/conexion.php";
+$conexion = conexion();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PLANTILLA | WEB 2</title>
+  <title>RESTAURANTE SALESIANO</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
-   <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
+  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
   <meta property="og:title" content="">
   <meta property="og:image" content="">
   <meta property="og:url" content="">
@@ -66,7 +70,8 @@
         <div class="col-md-12 text-center marb-35">
           <h1 class="header-h">Delicioso Viaje</h1>
           <p class="header-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-            <br>nibh euismod tincidunt ut laoreet dolore magna aliquam. </p>
+            <br>nibh euismod tincidunt ut laoreet dolore magna aliquam.
+          </p>
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-10">
@@ -112,12 +117,12 @@
                   <h2>Joyful party</h2>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore eos suscipit earum voluptas aliquam recusandae, quae iure adipisci, inventore quia, quos delectus quaerat praesentium id expedita nihil illo accusantium, tempora.</p>
                   <address>
-                              <strong>Place: </strong>
-                              1612 Collins Str, Victoria 8007
-                              <br>
-                              <strong>Time: </strong>
-                              07:30pm
-                            </address>
+                    <strong>Place: </strong>
+                    1612 Collins Str, Victoria 8007
+                    <br>
+                    <strong>Time: </strong>
+                    07:30pm
+                  </address>
                   <a class="btn btn-imfo btn-read-more" href="events-details.html">Read more</a>
                 </div>
               </div>
@@ -133,115 +138,73 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center marb-35">
-          <h1 class="header-h">Menu List</h1>
-          <p class="header-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-            <br>nibh euismod tincidunt ut laoreet dolore magna aliquam. </p>
+          <h1 class="header-h">Menú</h1>
+          <p class="header-p">Delitate de nuestro menú
+          </p>
         </div>
         <div class="col-md-12  text-center gallery-trigger">
           <ul>
-            <li><a class="filter" data-filter="all">Show All</a></li>
-            <li><a class="filter" data-filter=".category-1">Breakfast</a></li>
-            <li><a class="filter" data-filter=".category-2">Lunch</a></li>
-            <li><a class="filter" data-filter=".category-3">Dinner</a></li>
+            <li><a class="filter" data-filter="all">Ver todo</a></li>
+            <li><a class="filter" data-filter=".category-1">Comdias</a></li>
+            <li><a class="filter" data-filter=".category-2">Bebidas</a></li>
+            <li><a class="filter" data-filter=".category-3">Postres</a></li>
           </ul>
         </div>
         <div id="Container">
           <div class="mix category-1 menu-restaurant" data-myorder="2">
-            <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-            <span class="menu-price">$20.99</span>
-            </span>
-            <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
+            <?php
+            $sql_query = "SELECT * FROM tb_carta where categoria = 'comidas' limit 5";
+            $result_set = mysqli_query($conexion, $sql_query);
+            $i = 1;
+            while ($ver = mysqli_fetch_array($result_set)) {
+            ?>
+              <span class="clearfix">
+                <a class="menu-title" data-meal-img="assets/img/restaurant/rib.jpg"> <?php echo $ver['nombre']; ?> </a>
+                <span style="left: 166px; right: 44px;" class="menu-line"></span>
+                <span class="menu-price">$ <?php echo $ver['precio'];?></span>
+              </span>
+              <span class="menu-subtitle"> <?php echo $ver['subcategoria']; ?> </span>
+              <br>
+            <?php } ?>
           </div>
-          <div class="mix category-1 menu-restaurant" data-myorder="2">
-            <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-            <span class="menu-price">$20.99</span>
-            </span>
-            <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-          </div>
-          <div class="mix category-1 menu-restaurant" data-myorder="2">
-            <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-            <span class="menu-price">$20.99</span>
-            </span>
-            <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-          </div>
-          <div class="mix category-1 menu-restaurant" data-myorder="2">
-            <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-            <span class="menu-price">$20.99</span>
-            </span>
-            <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-          </div>
+
+          <!-- 2 -->
           <div class="mix category-2 menu-restaurant" data-myorder="2">
             <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-            <span class="menu-price">$20.99</span>
-            </span>
-            <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
+            <?php
+            $sql_query = "SELECT * FROM tb_carta where categoria = 'bebidas' limit 5";
+            $result_set = mysqli_query($conexion, $sql_query);
+            $i = 1;
+            while ($ver = mysqli_fetch_array($result_set)) {
+            ?>
+              <span class="clearfix">
+                <a class="menu-title" data-meal-img="assets/img/restaurant/rib.jpg"> <?php echo $ver['nombre']; ?> </a>
+                <span style="left: 166px; right: 44px;" class="menu-line"></span>
+                <span class="menu-price">$ <?php echo $ver['precio'];?></span>
+              </span>
+              <span class="menu-subtitle"> <?php echo $ver['subcategoria']; ?> </span>
+              <br>
+            <?php } ?>
           </div>
-          <div class="mix category-2 menu-restaurant" data-myorder="2">
-            <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-            <span class="menu-price">$20.99</span>
-            </span>
-            <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-          </div>
-          <div class="mix category-2 menu-restaurant" data-myorder="2">
-            <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-            <span class="menu-price">$20.99</span>
-            </span>
-            <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-          </div>
-          <div class="mix category-2 menu-restaurant" data-myorder="2">
-            <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-            <span class="menu-price">$20.99</span>
-            </span>
-            <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-          </div>
+
+          <!-- 3 -->
           <div class="mix category-3 menu-restaurant" data-myorder="2">
-            <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-            <span class="menu-price">$20.99</span>
-            </span>
-            <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
+          <?php
+            $sql_query = "SELECT * FROM tb_carta where categoria = 'postres ' limit 5";
+            $result_set = mysqli_query($conexion, $sql_query);
+            $i = 1;
+            while ($ver = mysqli_fetch_array($result_set)) {
+            ?>
+              <span class="clearfix">
+                <a class="menu-title" data-meal-img="assets/img/restaurant/rib.jpg"> <?php echo $ver['nombre']; ?> </a>
+                <span style="left: 166px; right: 44px;" class="menu-line"></span>
+                <span class="menu-price">$ <?php echo $ver['precio'];?></span>
+              </span>
+              <span class="menu-subtitle"> <?php echo $ver['subcategoria']; ?> </span>
+              <br>
+            <?php } ?>
           </div>
-          <div class="mix category-3 menu-restaurant" data-myorder="2">
-            <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-            <span class="menu-price">$20.99</span>
-            </span>
-            <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-          </div>
-          <div class="mix category-3 menu-restaurant" data-myorder="2">
-            <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-            <span class="menu-price">$20.99</span>
-            </span>
-            <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-          </div>
-          <div class="mix category-3 menu-restaurant" data-myorder="2">
-            <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-            <span class="menu-price">$20.99</span>
-            </span>
-            <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-          </div>
+
         </div>
       </div>
     </div>
@@ -254,7 +217,8 @@
         <div class="col-md-12 text-center">
           <h1 class="header-h">Reserve Su Mesa</h1>
           <p class="header-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-            <br>nibh euismod tincidunt ut laoreet dolore magna aliquam. </p>
+            <br>nibh euismod tincidunt ut laoreet dolore magna aliquam.
+          </p>
         </div>
       </div>
       <div class="row msg-row">
@@ -354,10 +318,10 @@
             </div>
             <p class="copyright clear-float">
               © ProOnliPc Theme. All Rights Reserved
-              <div class="credits">
-                
-                Designed by <a href="https://www.youtube.com/channel/UCDH0DJaVLkCDtl_YN9hhByw?view_as=subscriberP">ProOnliPc</a>
-              </div>
+            <div class="credits">
+
+              Designed by <a href="https://www.youtube.com/channel/UCDH0DJaVLkCDtl_YN9hhByw?view_as=subscriberP">ProOnliPc</a>
+            </div>
             </p>
           </div>
         </div>

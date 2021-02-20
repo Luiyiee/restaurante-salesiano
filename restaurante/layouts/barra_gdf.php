@@ -1,6 +1,7 @@
 <?php
 include_once 'configuracion/conexion.php';
 $iduser=$_SESSION['datos_login']['email'];
+
 $sql_pedidos = "SELECT count(*) total_pedidos FROM tb_pedidos where notificacion = '1' and idusuario = '$iduser' ";
 $result_pedidos      = mysqli_query($conexion, $sql_pedidos);
 $total_pedidos  = mysqli_fetch_assoc($result_pedidos);
