@@ -51,12 +51,7 @@
     
       <br>
     <!-- FIN -->
-    <li class="">
-        <a href="calendar.html" class="waves-effect active">
-          <i class="zmdi zmdi-calendar-check"></i> <span>Promociones</span>
-          <small class="badge float-right badge-light">New</small>
-        </a>
-      </li>
+  
 
 
       <hr>

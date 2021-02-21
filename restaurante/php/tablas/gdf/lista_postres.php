@@ -34,7 +34,7 @@ $iduser=$_SESSION['datos_login']['id_usuario'];
                         while ($ver = mysqli_fetch_array($result_set)) {
                         ?>
                             <tr>
-                                <td><img src="descarga.png" class="product-img" alt="product img"></td>
+                            <td><img src="images/cartelera/<?php echo $ver['imagen']; ?>" width="20px" height="20px" alt=""></td>
                                 <td><?php echo $ver['nombre']; ?></td>
                                 <td><?php echo '$ '.$ver['precio']; ?></td>
                                 <td><button class="btn btn-outline-success" onclick="agregarCarrito(<?php echo $iduser; ?>,<?php echo $ver['id_comida']; ?>)">Agregar al pedido</button></td>
@@ -75,7 +75,7 @@ $iduser=$_SESSION['datos_login']['id_usuario'];
                         while ($ver = mysqli_fetch_array($result_set)) {
                         ?>
                             <tr>
-                                <td><img src="descarga.png" class="product-img" alt="product img"></td>
+                            <td><img src="images/cartelera/<?php echo $ver['imagen']; ?>" width="20px" height="20px" alt=""></td>
                                 <td><?php echo $ver['nombre']; ?></td>
                                 <td><?php echo '$ '.$ver['precio']; ?></td>
                                 <td><button class="btn btn-outline-success" onclick="agregarCarrito(<?php echo $iduser; ?>,<?php echo $ver['id_comida']; ?>)">Agregar al pedido</button></td>

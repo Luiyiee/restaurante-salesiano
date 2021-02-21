@@ -36,7 +36,8 @@ $iduser=$_SESSION['datos_login']['id_usuario'];
                     <li class="list-group-item bg-transparent">
                         <div class="media align-items-center">
                             <button class="btn btn-outline-danger mr-3" onclick="eliminarCarrito(<?php echo $ver['id'] ?>)">Eliminar</button>
-                            <img src="assets\images\avatars\avatar-13.png" alt="image" class="customer-img rounded-circle">
+                            <!-- <img src="assets\images\avatars\avatar-13.png" alt="image" class="customer-img rounded-circle"> -->
+                            <img src="images/cartelera/<?php echo $ver['imagen']; ?>" width="20px" height="20px" alt="">
                             <div class="media-body ml-3">
                                 <h4 class="mb-0"><?php echo $ver['nombre']; ?></h4>
                             </div>

@@ -152,12 +152,11 @@ include_once './configuracion/conexion.php';
                             </div>
 
                             <div class="col-sm-6">
-                                <label>categoria</label>
+                                <label>Subcategoria</label>
                                 <div class="input-group mb-3">
-                                    <select name="categoria" id="categoria" class="form-control">
-                                        <option value="comidas">comidas</option>
-                                        <option value="bebidas">bebidas</option>
-                                        <option value="postres">postres</option>
+                                    <select name="subcategoria" id="subcategoria" class="form-control">
+                                        <option value="torta">torta</option>
+                                        <option value="helado">helado</option>
                                     </select>
                                 </div>
                             </div>
@@ -182,7 +181,6 @@ include_once './configuracion/conexion.php';
     </div>
 
     <!-- Modal para edicion de datos -->
-
     <div class="modal fade" id="modalEdicion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -221,26 +219,21 @@ include_once './configuracion/conexion.php';
                             <div class="col-sm-6">
                                 <label>categoria</label>
                                 <div class="input-group mb-3">
-                                  <select name="categoria" id="categoriau" class="form-control">
-                                  <option value="comidas">comidas</option>
-                                  <option value="bebidas">bebidas</option>
-                                  <option value="postres">postres</option>
-                                  </select>
+                                    <select name="subcategoria" id="subcategoriau" class="form-control">
+                                        <option value="torta">torta</option>
+                                        <option value="helado">helado</option>
+                                    </select>
                                 </div>
                             </div>
 
                             <div class="col-sm-6">
-                                <label>subcategoriaVer</label>
-                                <div class="input-group mb-3">
-                                    <input type="text" id="subcategoriau" name="subcategoriau" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-
                                 <label>Imagen</label>
                                 <div class="input-group mb-3">
                                     <input type="file" id="imagenu" name="imagen" class="form-control">
                                 </div>
+                            </div>
+                        </div>
+
 
 
 
@@ -253,6 +246,7 @@ include_once './configuracion/conexion.php';
             </div>
         </div>
     </div>
+
 
     <!--  -->
 
@@ -301,13 +295,62 @@ include_once './configuracion/conexion.php';
         });
     </script>
 
-    <script type="text/javascript">
-       
-            $('#actualizadatos').click(function() {
-                actualizaDatos();
-        });
+
     </script>
 
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#btnAgregar').click(function() {
+
+                if ($('#nombre').val() == "") {
+                    llenar_campo();
+                    return false;
+                } else if ($('#precio').val() == "") {
+                    llenar_campo();
+                    return false;
+                } else if ($('#imagen').val() == "") {
+                    llenar_campo();
+                    return false;
+                }
+                var formData = new FormData(document.getElementById("frmCartelera"));
+
+                $.ajax({
+                    url: "php/crud/administrador/cartelera/agregar_postres.php",
+                    type: "post",
+                    dataType: "html",
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+
+                    success: function(r) {
+                        if (r == 2) {
+                            existe_agregar();
+                        } else
+                        if (r == 1) {
+                            $("#nombre").val('').change();
+                            $("#precio").val('').change();
+                            $("#subcategoria").val('').change();
+                            $("#imagen").val('').change();
+
+                            exito_agregar();
+                            $('#tabla').load('php/tablas/administrador/postres.php');
+                        } else {
+
+                            error_agregar(r);
+                            $('#tabla').load('php/tablas/administrador/postres.php');
+
+                        }
+                    }
+                });
+
+            });
+            $('#actualizadatos').click(function() {
+                actualizaDatos();
+            });
+        });
+    </script>
 
     <script type="text/javascript">
         function agregaform(datos) {
@@ -327,7 +370,7 @@ include_once './configuracion/conexion.php';
             var formData = new FormData(document.getElementById("frmCarteleraU"));
             $.ajax({
                 type: "POST",
-                url: "php/crud/administrador/cartelera/modificar.php",
+                url: "php/crud/administrador/cartelera/modificar_postres.php",
                 dataType: "html",
                 data: formData,
                 cache: false,
@@ -342,7 +385,7 @@ include_once './configuracion/conexion.php';
                     } else {
                         $('#tabla').load('php/tablas/administrador/postres.php');
                         error_actualizar(r);
-                    //    console.log/
+                        //    console.log/
                     }
                 }
             });

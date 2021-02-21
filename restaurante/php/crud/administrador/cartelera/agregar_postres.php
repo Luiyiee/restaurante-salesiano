@@ -30,7 +30,7 @@ echo 2;
                         if(move_uploaded_file($_FILES['imagen']['tmp_name'], $carpeta.$nombreFinal)){
                             $sql = "INSERT into tb_carta 
                             (nombre,precio,categoria,subcategoria,imagen,idusuario)
-                    values  ('$nombre','$precio','comidas','$subcategoria','$nombreFinal','$iduser')";
+                    values  ('$nombre','$precio','postres','$subcategoria','$nombreFinal','$iduser')";
                             echo $result = mysqli_query($conexion, $sql)or die($conexion->error);
                     	}else{
                             echo "no se puede subir la imagen";

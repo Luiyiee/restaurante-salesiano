@@ -68,7 +68,9 @@ if ($_SESSION['datos_login']['conexion'] === 'Desconectado') {
                 <div id="tablaPedido"></div>
         
       </div>
-    </div>
+    </div></div>
+
+    
     <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
     <footer class="footer">
       <div class="container">
@@ -77,7 +79,7 @@ if ($_SESSION['datos_login']['conexion'] === 'Desconectado') {
         </div>
       </div>
     </footer>
-  </div>
+  
   <!--End wrapper-->
 
   <!-- Bootstrap core JavaScript-->

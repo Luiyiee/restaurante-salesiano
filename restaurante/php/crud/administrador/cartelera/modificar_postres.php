@@ -41,7 +41,7 @@ if (!preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/', $nombre)) {
 	echo "No se pudo actualizar el nombres $nombre <br> Ingrese solo letras ";
 	
 }  else {
-$sql = "UPDATE tb_carta set	nombre='$nombre', precio='$precio',	categoria='comidas',
+$sql = "UPDATE tb_carta set	nombre='$nombre', precio='$precio',	categoria='postres',
  subcategoria = '$subcategoria', idusuario='$iduser' where id_comida='$id_2'";
 	echo $result = mysqli_query($conexion, $sql);
 
