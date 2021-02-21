@@ -41,10 +41,8 @@ $conexion = conexion();
         <div class="container">
           <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#about">About</a>
-            <a href="#event">Event</a>
+          
             <a href="#menu-list">Menu</a>
-            <a href="#contact">Book a table</a>
             <a href="iniciar-sesion.php">Iniciar sesion</a>
           </div>
           <!-- Use any element to open the sidenav -->
@@ -54,9 +52,9 @@ $conexion = conexion();
       <div class="container">
         <div class="row">
           <div class="inner text-center">
-            <h1 class="logo-name">ProOnliPc</h1>
+            <h1 class="logo-name">Restaurante Salesinao</h1>
             <h2>Alimentos Para adaptarse a su estilo de vida & salud.</h2>
-            <p>¡Especializado en cocina Peruana!!</p>
+            <p>¡Especializado en cocina Ecuatoriana!</p>
           </div>
         </div>
       </div>
@@ -69,22 +67,24 @@ $conexion = conexion();
       <div class="row">
         <div class="col-md-12 text-center marb-35">
           <h1 class="header-h">Delicioso Viaje</h1>
-          <p class="header-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+          <!-- <p class="header-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
             <br>nibh euismod tincidunt ut laoreet dolore magna aliquam.
-          </p>
+          </p> -->
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-10">
           <div class="col-md-6 col-sm-6">
             <div class="about-info">
-              <h2 class="heading">vel illum qui dolorem eum</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero impedit inventore culpa vero accusamus in nostrum dignissimos modi, molestiae. Autem iusto esse necessitatibus ex corporis earum quaerat voluptates quibusdam dicta!</p>
+              <h2 class="heading">Alitas de pollo</h2>
+              <p>En un bowl agregar las alitas de pollo , condimentar con sal-pimienta y adobar con la mostaza.
+
+Sumergir cada alita de pollo en el huevo batido y luego en panko. Freír en aceite caliente por 10 a 12 minutos hasta dorar.</p>
               <div class="details-list">
                 <ul>
-                  <li><i class="fa fa-check"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                  <li><i class="fa fa-check"></i>Quisque finibus eu lorem quis elementum</li>
-                  <li><i class="fa fa-check"></i>Vivamus accumsan porttitor justo sed </li>
-                  <li><i class="fa fa-check"></i>Curabitur at massa id tortor fermentum luctus</li>
+                  <li><i class="fa fa-check"></i>6 alitas de pollo</li>
+                  <li><i class="fa fa-check"></i>papas fritas</li>
+                  <li><i class="fa fa-check"></i>cola </li>
+                  <li><i class="fa fa-check"></i>arroz con menestra</li>
                 </ul>
               </div>
             </div>
@@ -104,8 +104,8 @@ $conexion = conexion();
       <div class="container">
         <div class="row">
           <div class="col-xs-12 text-center" style="padding:60px;">
-            <h1 class="header-h">Up Coming events</h1>
-            <p class="header-p">Decorations 100% complete here</p>
+            <h1 class="header-h"> Comidas </h1>
+            <!-- <p class="header-p">Decorations 100% complete here</p> -->
           </div>
           <div class="col-md-12" style="padding-bottom:60px;">
             <div class="item active left">
@@ -114,16 +114,20 @@ $conexion = conexion();
               </div>
               <div class="col-md-6 col-sm-6 details-text">
                 <div class="content-holder">
-                  <h2>Joyful party</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore eos suscipit earum voluptas aliquam recusandae, quae iure adipisci, inventore quia, quos delectus quaerat praesentium id expedita nihil illo accusantium, tempora.</p>
+                  <h2>Arroz marinero - Arroz con mariscos</h2>
+                  <p>
+                    El arroz marinero o arroz con mariscos es un plato típico de varios países latinos,
+                     y en Ecuador es un plato tradicional de la Costa. El arroz marinero ecuatoriano se prepara con arroz, 
+                     camarones, calamares, conchas, mejillones, ajo, cebolla, pimiento, cilantro y condimentos/especias.
+                  </p>
                   <address>
-                    <strong>Place: </strong>
-                    1612 Collins Str, Victoria 8007
+                    <strong>Teléfono: </strong>
+                    0945678349
                     <br>
                     <strong>Time: </strong>
-                    07:30pm
+                    07:30am - 10:00pm
                   </address>
-                  <a class="btn btn-imfo btn-read-more" href="events-details.html">Read more</a>
+                  <!-- <a class="btn btn-imfo btn-read-more" href="events-details.html">Read more</a> -->
                 </div>
               </div>
             </div>
@@ -161,7 +165,7 @@ $conexion = conexion();
               <span class="clearfix">
                 <a class="menu-title" data-meal-img="assets/img/restaurant/rib.jpg"> <?php echo $ver['nombre']; ?> </a>
                 <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                <span class="menu-price">$ <?php echo $ver['precio'];?></span>
+                <span class="menu-price">$ <?php echo $ver['precio']; ?></span>
               </span>
               <span class="menu-subtitle"> <?php echo $ver['subcategoria']; ?> </span>
               <br>
@@ -171,25 +175,25 @@ $conexion = conexion();
           <!-- 2 -->
           <div class="mix category-2 menu-restaurant" data-myorder="2">
             <span class="clearfix">
-            <?php
-            $sql_query = "SELECT * FROM tb_carta where categoria = 'bebidas' limit 5";
-            $result_set = mysqli_query($conexion, $sql_query);
-            $i = 1;
-            while ($ver = mysqli_fetch_array($result_set)) {
-            ?>
-              <span class="clearfix">
-                <a class="menu-title" data-meal-img="assets/img/restaurant/rib.jpg"> <?php echo $ver['nombre']; ?> </a>
-                <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                <span class="menu-price">$ <?php echo $ver['precio'];?></span>
-              </span>
-              <span class="menu-subtitle"> <?php echo $ver['subcategoria']; ?> </span>
-              <br>
-            <?php } ?>
+              <?php
+              $sql_query = "SELECT * FROM tb_carta where categoria = 'bebidas' limit 5";
+              $result_set = mysqli_query($conexion, $sql_query);
+              $i = 1;
+              while ($ver = mysqli_fetch_array($result_set)) {
+              ?>
+                <span class="clearfix">
+                  <a class="menu-title" data-meal-img="assets/img/restaurant/rib.jpg"> <?php echo $ver['nombre']; ?> </a>
+                  <span style="left: 166px; right: 44px;" class="menu-line"></span>
+                  <span class="menu-price">$ <?php echo $ver['precio']; ?></span>
+                </span>
+                <span class="menu-subtitle"> <?php echo $ver['subcategoria']; ?> </span>
+                <br>
+              <?php } ?>
           </div>
 
           <!-- 3 -->
           <div class="mix category-3 menu-restaurant" data-myorder="2">
-          <?php
+            <?php
             $sql_query = "SELECT * FROM tb_carta where categoria = 'postres ' limit 5";
             $result_set = mysqli_query($conexion, $sql_query);
             $i = 1;
@@ -198,7 +202,7 @@ $conexion = conexion();
               <span class="clearfix">
                 <a class="menu-title" data-meal-img="assets/img/restaurant/rib.jpg"> <?php echo $ver['nombre']; ?> </a>
                 <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                <span class="menu-price">$ <?php echo $ver['precio'];?></span>
+                <span class="menu-price">$ <?php echo $ver['precio']; ?></span>
               </span>
               <span class="menu-subtitle"> <?php echo $ver['subcategoria']; ?> </span>
               <br>
@@ -211,98 +215,7 @@ $conexion = conexion();
   </section>
   <!--/ menu -->
   <!-- contact -->
-  <section id="contact" class="section-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <h1 class="header-h">Reserve Su Mesa</h1>
-          <p class="header-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-            <br>nibh euismod tincidunt ut laoreet dolore magna aliquam.
-          </p>
-        </div>
-      </div>
-      <div class="row msg-row">
-        <div class="col-md-4 col-sm-4 mr-15">
-          <div class="media-2">
-            <div class="media-left">
-              <div class="contact-phone bg-1 text-center"><span class="phone-in-talk fa fa-phone"></span></div>
-            </div>
-            <div class="media-body">
-              <h4 class="dark-blue regular">Phone Numbers</h4>
-              <p class="light-blue regular alt-p">+440 875369208 - <span class="contacts-sp">Phone Booking</span></p>
-            </div>
-          </div>
-          <div class="media-2">
-            <div class="media-left">
-              <div class="contact-email bg-14 text-center"><span class="hour-icon fa fa-clock-o"></span></div>
-            </div>
-            <div class="media-body">
-              <h4 class="dark-blue regular">Opening Hours</h4>
-              <p class="light-blue regular alt-p"> Monday to Friday 09.00 - 24:00</p>
-              <p class="light-blue regular alt-p">
-                Friday and Sunday 08:00 - 03.00
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-8 col-sm-8">
-          <form action="" method="post" role="form" class="contactForm">
-            <div id="sendmessage">Your booking request has been sent. Thank you!</div>
-            <div id="errormessage"></div>
-            <div class="col-md-6 col-sm-6 contact-form pad-form">
-              <div class="form-group label-floating is-empty">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                <div class="validation"></div>
-              </div>
 
-            </div>
-            <div class="col-md-6 col-sm-6 contact-form">
-              <div class="form-group">
-                <input type="date" class="form-control label-floating is-empty" name="date" id="date" placeholder="Date" data-rule="required" data-msg="This field is required" />
-                <div class="validation"></div>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 contact-form pad-form">
-              <div class="form-group">
-                <input type="email" class="form-control label-floating is-empty" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                <div class="validation"></div>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 contact-form">
-              <div class="form-group">
-                <input type="time" class="form-control label-floating is-empty" name="time" id="time" placeholder="Time" data-rule="required" data-msg="This field is required" />
-                <div class="validation"></div>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 contact-form">
-              <div class="form-group">
-                <input type="text" class="form-control label-floating is-empty" name="phone" id="phone" placeholder="Phone" data-rule="required" data-msg="This field is required" />
-                <div class="validation"></div>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 contact-form">
-              <div class="form-group">
-                <input type="text" class="form-control label-floating is-empty" name="people" id="people" placeholder="People" data-rule="required" data-msg="This field is required" />
-                <div class="validation"></div>
-              </div>
-            </div>
-            <div class="col-md-12 contact-form">
-              <div class="form-group label-floating is-empty">
-                <textarea class="form-control" name="message" rows="5" rows="3" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                <div class="validation"></div>
-              </div>
-
-            </div>
-            <div class="col-md-12 btnpad">
-              <div class="contacts-btn-pad">
-                <button class="contacts-btn">Reserve Su Mesa</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
   <!-- / contact -->
   <!-- footer -->
   <footer class="footer text-center">
@@ -310,18 +223,15 @@ $conexion = conexion();
       <div class="row">
         <div class="col-md-offset-3 col-md-6 text-center">
           <div class="widget">
-            <h4 class="widget-title">ProOnliPc</h4>
-            <address>324 Ellte Road<br>Delhi, DL 110013</address>
+            <h4 class="widget-title">Restaurante Salesiano</h4>
+            <!-- <address>324 Ellte Road<br>Delhi, DL 110013</address> -->
             <div class="social-list">
               <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
               <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
             </div>
             <p class="copyright clear-float">
-              © ProOnliPc Theme. All Rights Reserved
-            <div class="credits">
+              © Restaurante Salesiano. Todos los derehcos reservados
 
-              Designed by <a href="https://www.youtube.com/channel/UCDH0DJaVLkCDtl_YN9hhByw?view_as=subscriberP">ProOnliPc</a>
-            </div>
             </p>
           </div>
         </div>
