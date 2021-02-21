@@ -58,7 +58,7 @@ $conexion = conexion();
 									<td><?php echo $ver['precio']; ?></td>
 									<td><?php echo $ver['categoria']; ?></td>
 									<td>
-										<button class="btn btn-warning btn-small btnVer" data-id="<?php echo $ver['id']; ?>" data-nombre="<?php echo $ver['nombre']; ?>" data-precio="<?php echo $ver['precio']; ?>" data-categoria="<?php echo $ver['categoria']; ?>" data-subcategoria="<?php echo $ver['subcategoria']; ?>" data-toggle="modal" data-target="#modalVer">
+										<button class="btn btn-warning btn-small btnVer" data-id="<?php echo $ver['id_comida']; ?>" data-nombre="<?php echo $ver['nombre']; ?>" data-precio="<?php echo $ver['precio']; ?>" data-categoria="<?php echo $ver['categoria']; ?>" data-subcategoria="<?php echo $ver['subcategoria']; ?>" data-toggle="modal" data-target="#modalVer">
 
 											<i class="fas fa-eye"></i>
 										</button>

@@ -70,7 +70,7 @@
       <hr>
       <br>
       <li class="">
-        <a href="calendar.html" class="waves-effect active">
+        <a href="misPedidos.php" class="waves-effect active">
           <i class="zmdi zmdi-calendar-check"></i> <span>Mis pedidos</span>
         </a>
       </li>
