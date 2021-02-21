@@ -34,7 +34,7 @@ $iduser=$_SESSION['datos_login']['id_usuario'];
                         while ($ver = mysqli_fetch_array($result_set)) {
                         ?>
                             <tr>
-                            <td><img src="images/cartelera/<?php echo $ver['imagen']; ?>" width="20px" height="20px" alt=""></td>
+                            <td><img src="images/cartelera/<?php echo $ver['imagen']; ?>" width="120px" height="120px" alt=""></td>
                                 <td><?php echo $ver['nombre']; ?></td>
                                 <td><?php echo '$ '.$ver['precio']; ?></td>
                                 <td><button class="btn btn-outline-success" onclick="agregarCarrito(<?php echo $iduser; ?>,<?php echo $ver['id_comida']; ?>)">Agregar</button></td>
@@ -75,7 +75,7 @@ $iduser=$_SESSION['datos_login']['id_usuario'];
                         while ($ver = mysqli_fetch_array($result_set)) {
                         ?>
                             <tr>
-                            <td><img src="images/cartelera/<?php echo $ver['imagen']; ?>" width="20px" height="20px" alt=""></td>
+                            <td><img src="images/cartelera/<?php echo $ver['imagen']; ?>" width="120px" height="120px" alt=""></td>
                                 <td><?php echo $ver['nombre']; ?></td>
                                 <td><?php echo '$ '.$ver['precio']; ?></td>
                                 <td><button class="btn btn-outline-success" onclick="agregarCarrito(<?php echo $iduser; ?>,<?php echo $ver['id_comida']; ?>)">Agregar al pedido</button></td>
@@ -94,12 +94,14 @@ $iduser=$_SESSION['datos_login']['id_usuario'];
 </div>
 <script>
     function agregarCarrito(id_user, id_comida) {
+        alert(id_user);
+        alert(id_comida);
         var form = new FormData();
         form.append("id_usuario", id_user);
         form.append("id_comida", id_comida);
 
         var settings = {
-        "url": "http://localhost/restaurante salesiano/restaurante/php/crud/gdf/restaurante/carrito.php",
+        "url": "http://localhost/restaurante-salesiano/restaurante/php/crud/gdf/restaurante/carrito.php",
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -114,7 +116,7 @@ $iduser=$_SESSION['datos_login']['id_usuario'];
         $.ajax(settings).done(function (response) {
         console.log(response);
         if(response==1){
-            location.href ="http://localhost/restaurante%20salesiano/restaurante/pedido.php";
+            location.href ="http://localhost/restaurante-salesiano/restaurante/pedido.php";
         }else{
             console.log('error');
         }

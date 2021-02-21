@@ -3,7 +3,7 @@
   <div class="brand-logo">
     <a href="index.html">
 
-      <img src="images/logo.jpg" class="logo-icon" alt="logo icon">
+      <!-- <img src="images/logo.jpg" class="logo-icon" alt="logo icon"> -->
       <h5 class="logo-text"> RESTAURANTE SALESIANO</h5>
 
   
@@ -26,13 +26,7 @@
       </div> -->
   <ul class="sidebar-menu do-nicescrol">
     <br>
-    <br>
-      <!-- <li class="sidebar-header">MAIN NAVIGATION</li> -->
     
-
-    <!-- USUARIOS -->
-    <br>
-    <hr>
 
     <li>
       <a href="javaScript:void();" class="waves-effect">

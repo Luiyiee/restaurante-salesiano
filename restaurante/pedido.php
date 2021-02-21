@@ -40,6 +40,8 @@ if ($_SESSION['datos_login']['conexion'] === 'Desconectado') {
   <link href="assets\css\sidebar-menu.css" rel="stylesheet">
   <!-- Custom Style-->
   <link href="assets\css\app-style.css" rel="stylesheet">
+
+  <!-- <script src="librerias/jquery-3.2.1.min.js"></script> -->
 </head>
 <body class="bg-theme9">
   <div id="pageloader-overlay" class="visible incoming">
@@ -71,14 +73,7 @@ if ($_SESSION['datos_login']['conexion'] === 'Desconectado') {
     </div></div>
 
     
-    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
-    <footer class="footer">
-      <div class="container">
-        <div class="text-center">
-          Copyright © 2018 Dashtreme Admin
-        </div>
-      </div>
-    </footer>
+
   
   <!--End wrapper-->
 

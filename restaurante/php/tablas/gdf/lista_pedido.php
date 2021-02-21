@@ -37,7 +37,7 @@ $iduser=$_SESSION['datos_login']['id_usuario'];
                         <div class="media align-items-center">
                             <button class="btn btn-outline-danger mr-3" onclick="eliminarCarrito(<?php echo $ver['id'] ?>)">Eliminar</button>
                             <!-- <img src="assets\images\avatars\avatar-13.png" alt="image" class="customer-img rounded-circle"> -->
-                            <img src="images/cartelera/<?php echo $ver['imagen']; ?>" width="20px" height="20px" alt="">
+                            <img src="images/cartelera/<?php echo $ver['imagen']; ?>" width="120px" height="100px" alt="">
                             <div class="media-body ml-3">
                                 <h4 class="mb-0"><?php echo $ver['nombre']; ?></h4>
                             </div>
@@ -66,7 +66,7 @@ $iduser=$_SESSION['datos_login']['id_usuario'];
         form.append("id", id);
 
         var settings = {
-        "url": "http://localhost/restaurante salesiano/restaurante/php/crud/gdf/restaurante/pedido.php",
+        "url": "http://localhost/restaurante-salesiano/restaurante/php/crud/gdf/restaurante/pedido.php",
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -82,7 +82,7 @@ $iduser=$_SESSION['datos_login']['id_usuario'];
         console.log(response);
         if(response==1){
             alert('Producto borrado');
-            location.href ="http://localhost/restaurante%20salesiano/restaurante/pedido.php";
+            location.href ="http://localhost/restaurante-salesiano/restaurante/pedido.php";
         }else{
             console.log('error');
         }
