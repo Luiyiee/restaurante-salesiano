@@ -69,7 +69,7 @@ $iduser=$_SESSION['datos_login']['id_usuario'];
                         </thead>
                         <tbody>
                         <?php
-                        $sql_query = "SELECT * from tb_carta where categoria='bebidas' and subcategoria='jugo' ";
+                        $sql_query = "SELECT * from tb_carta where categoria='bebidas' and subcategoria='jugos' ";
                         $result_set = mysqli_query($conexion, $sql_query);
                         $i = 1;
                         while ($ver = mysqli_fetch_array($result_set)) {
