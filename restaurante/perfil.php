@@ -86,9 +86,16 @@ if (!isset($_GET['edit_id'])) {
     <!-- Start wrapper-->
     <div id="wrapper">
 
-
-        <?php require 'layouts/menu.php' ?>
-        <?php require 'layouts/barra.php' ?>
+    <?php 
+     if ($_SESSION['datos_login']['nivel'] == "Administrador") {
+      include 'layouts/menu.php';
+      include 'layouts/barra.php';
+      
+    }else{
+      include 'layouts/menu_gdf.php';
+      include 'layouts/barra_gdf.php';
+     }
+    ?>
 
                 <!-- <div class="content-wrapper">
                 <div class="container-fluid"> -->
@@ -155,15 +162,16 @@ if (!isset($_GET['edit_id'])) {
                                                         </div>
 
                                                         <div class="form-group row">
-                                                            <label class="col-lg-3 col-form-label form-control-label">Imagen</label>
+                                                            <!-- <label class="col-lg-3 col-form-label form-control-label">Imagen</label> -->
                                                             <div class="col-lg-6">
                                                                 <?php if($_SESSION['datos_login']['nivel']=='Administrador'){
                                                                     ?>
+                                                                    <label class="col-lg-3 col-form-label form-control-label">Imagen</label>
                                                                     <center>  <img src="images/users/administradores/<?php echo $fetched_row['img_perfil'];?>" width="50%" height="100%" alt=""></center>
                                                                     <?php 
                                                                 }else if($_SESSION['datos_login']['nivel']=='Cliente'){
                                                                     ?>  
-                                                                    <center>  <img src="images/users/clientes/<?php echo $fetched_row['img_perfil']; ?>" width="50%" height="100%" alt=""></center>
+                                                                    <!-- <center>  <img src="images/users/clientes/<?php echo $fetched_row['img_perfil']; ?>" width="50%" height="100%" alt=""></center> -->
                                                                     <?php
                                                                 }?>
                                                             </div>
