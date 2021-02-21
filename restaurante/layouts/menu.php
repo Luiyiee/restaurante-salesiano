@@ -60,7 +60,7 @@
         <i class="fa fa-angle-left pull-right"></i>
       </a>
       <ul class="sidebar-submenu">   
-        <li><a href="mantenimiento-cartelera.php" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> cartelera</a></li>
+        <!-- <li><a href="mantenimiento-cartelera.php" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> cartelera</a></li> -->
         <li><a href="lista-comidas.php" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Comidas</a></li>
         <li><a href="lista-bebidas.php" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Bebidas</a></li>
         <li><a href="lista-postres.php" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Postres</a></li>
