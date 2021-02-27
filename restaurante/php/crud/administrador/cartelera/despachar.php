@@ -18,7 +18,7 @@ if($estado == 'Despachar'){
 
         $sql = "INSERT into tb_facturas
         (nombre,cantidad,precio,categoria,subcategoria,idusuario,fecha,notificacion)
-values  ('$nombre','$cantidad','$precio','$categoria','$subcategoria','$iduser',now(),'1')";
+values  ('$nombre','$cantidad','$precio','$categoria','$subcategoria','$iduser',now(),'0')";
         echo $result = mysqli_query($conexion, $sql)or die($conexion->error);
 }
 

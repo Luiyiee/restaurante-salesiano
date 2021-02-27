@@ -1,8 +1,8 @@
 <!--Start sidebar-wrapper-->
 <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
   <div class="brand-logo">
-    <a href="index.html">
-      <img src="images/" class="logo-icon" alt="logo icon">
+    <a href="inicio.php">
+      <!-- <img src="images/" class="logo-icon" alt="logo icon"> -->
       <h5 class="logo-text"> RESTAURANTE </h5>
     </a>
   </div>

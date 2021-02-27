@@ -57,7 +57,7 @@ $total_facturas = mysqli_fetch_assoc($result_facturas);
                   <div class="progress my-3" style="height:3px;">
                     <div class="progress-bar" style="width: <?php echo $total_facturas['total_facturas'] ?>%"></div>
                   </div>
-                  <p class="mb-0 text-white small-font">total_facturas <span class="float-right"> </span></p>
+                  <p class="mb-0 text-white small-font">realizados <span class="float-right"> </span></p>
                 </div>
               </div>
             </div>

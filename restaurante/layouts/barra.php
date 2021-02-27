@@ -11,7 +11,7 @@ $result_facturas      = mysqli_query($conexion, $select_facturas);
 $total_facturas  = mysqli_fetch_assoc($result_facturas);
 
 
-$total_notificaciones = $total_pedidos['total_pedidos'] + $total_facturas['total_facturas'];
+$total_notificaciones = $total_pedidos['total_pedidos'] ;
 ?>
 <script type="text/javascript">
   function edt_id(id) {
@@ -58,17 +58,17 @@ $total_notificaciones = $total_pedidos['total_pedidos'] + $total_facturas['total
               </a>
             </li>
           
-            <li class="list-group-item">
+            <!-- <li class="list-group-item">
               <a href="javaScript:void();">
                 <div class="media">
                   <i class="zmdi zmdi-notifications-active fa-2x mr-3 text-danger"></i>
                   <div class="media-body">
-                    <h6 class="mt-0 msg-title"> <?php echo $total_facturas['total_facturas']; ?> <a href="notificacion-facturas.php"> ver facturas </a> </h6>
-                    <!-- <p class="msg-info">Lorem ipsum dolor sit amet...</p> -->
+                    <h6 class="mt-0 msg-title"> <php echo $total_facturas['total_facturas']; ?> <a href="notificacion-facturas.php"> ver facturas </a> </h6>
+            
                   </div>
                 </div>
               </a>
-            </li>
+            </li> -->
            
           </ul>
         </div>

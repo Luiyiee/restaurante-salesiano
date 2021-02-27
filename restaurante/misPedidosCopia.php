@@ -1,44 +1,22 @@
 <?php
 session_start();
-
 if (!isset($_SESSION['datos_login'])) {
   header("Location: ../");
 }
-
-
-// if (isset($_GET['datos_login']))
-//   $_SESSION['datos_login'] = $_GET['datos_login'];
 if ($_SESSION['datos_login']['estado'] !== "Activado") {
-  //$_SESSION['datos_login']['estado']
   header("Location: ../");
   session_unset();
 }
 
 include_once 'configuracion/conexion.php';
 $id_email = $_SESSION['datos_login']['email'];
-//gdf@rubi.prejus
-//prejus_123
 if ($_SESSION['datos_login']['conexion'] === 'Desconectado') {
   $sql = "UPDATE usuarios SET conexion='Conectado' WHERE email='$id_email' ";
   $result = $conexion->query($sql);
 }
-
-
-// VENTANAS
-
-//usuarios
-
-
-//cartelera
-// $sql_cartelera  = "SELECT COUNT(*) total_cartelera FROM cartelera";
-// $result_cartelera  = mysqli_query($conexion, $sql_cartelera);
-// $fila_cartelera = mysqli_fetch_assoc($result_cartelera);
-
-//registros
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -62,12 +40,8 @@ if ($_SESSION['datos_login']['conexion'] === 'Desconectado') {
   <link href="assets\css\sidebar-menu.css" rel="stylesheet">
   <!-- Custom Style-->
   <link href="assets\css\app-style.css" rel="stylesheet">
-
 </head>
-
-<body class="bg-theme bg-theme1">
-
-  <!-- start loader -->
+<body class="bg-theme9">
   <div id="pageloader-overlay" class="visible incoming">
     <div class="loader-wrapper-outer">
       <div class="loader-wrapper-inner">
@@ -75,12 +49,8 @@ if ($_SESSION['datos_login']['conexion'] === 'Desconectado') {
       </div>
     </div>
   </div>
-  <!-- end loader -->
 
-  <!-- Start wrapper-->
   <div id="wrapper">
-
-    <!--Start sidebar-wrapper-->
     <?php 
      if ($_SESSION['datos_login']['nivel'] == "Administrador") {
       include 'layouts/menu.php';
@@ -91,92 +61,22 @@ if ($_SESSION['datos_login']['conexion'] === 'Desconectado') {
       include 'layouts/barra_gdf.php';
      }
     ?>
- 
-    <!--End sidebar-wrapper-->
-
-    <!--Start topbar header-->
-   
-    <!--End topbar header-->
-
     <div class="clearfix"></div>
-
     <div class="content-wrapper">
       <div class="container-fluid">
-
-        <!--Start Dashboard Content-->
-
-        <!--ventanas-->
-        <?php 
-            if ($_SESSION['datos_login']['nivel'] == "Administrador") {
-                 include 'layouts/ventanas_administrador.php';
-             }else{
-                 include 'layouts/ventanas_gdf.php';
-              }
-        ?>
-        <!--Fin-->
-
-
-        <!--  -->
-        <!--End Row-->
-
-
-     
-
-      
-
-        </div>
-        <!--End Row-->
-
-        <!--End Dashboard Content-->
+      <br>
+                <div id="tablaMisPedidos"></div>
 
       </div>
-      <!-- End container-fluid-->
-
     </div>
-    <!--End content-wrapper-->
-    <!--Start Back To Top Button-->
     <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
-    <!--End Back To Top Button-->
-
-    <!--Start footer-->
-
-    <!--End footer-->
-
-    <!--start color switcher-->
-    <!-- <div class="right-sidebar">
-    <div class="switcher-icon">
-      <i class="zmdi zmdi-settings zmdi-hc-spin"></i>
-    </div>
-    <div class="right-sidebar-content">
-
-      <p class="mb-0">Gaussion Texture</p>
-      <hr>
-      
-      <ul class="switcher">
-        <li id="theme1"></li>
-        <li id="theme2"></li>
-        <li id="theme3"></li>
-        <li id="theme4"></li>
-        <li id="theme5"></li>
-        <li id="theme6"></li>
-      </ul>
-
-      <p class="mb-0">Gradient Background</p>
-      <hr>
-      
-      <ul class="switcher">
-        <li id="theme7"></li>
-        <li id="theme8"></li>
-        <li id="theme9"></li>
-        <li id="theme10"></li>
-        <li id="theme11"></li>
-        <li id="theme12"></li>
-      </ul>
-      
-     </div>
-   </div> -->
-    <!--end color cwitcher-->
-
+    <footer class="footer">
+      <div class="container">
+        <div class="text-center">
+          Copyright © 2018 Dashtreme Admin
+        </div>
+      </div>
+    </footer>
   </div>
   <!--End wrapper-->
 
@@ -206,11 +106,12 @@ if ($_SESSION['datos_login']['conexion'] === 'Desconectado') {
   <script src="assets\plugins\jquery-knob\excanvas.js"></script>
   <script src="assets\plugins\jquery-knob\jquery.knob.js"></script>
 
-  <script>
-    $(function() {
-      $(".knob").knob();
-    });
-  </script>
+  <script type="text/javascript">
+        $(document).ready(function() {
+            $('#tablaMisPedidos').load('php/tablas/gdf/lista_misPedidos.php');
+            // $('#buscador').load('php/tablas/buscador.php');
+        });
+    </script>
   <!-- Index js -->
   <script src="assets\js\index.js"></script>
 

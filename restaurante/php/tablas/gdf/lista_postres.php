@@ -37,8 +37,13 @@ $iduser=$_SESSION['datos_login']['id_usuario'];
                             <td><img src="images/cartelera/<?php echo $ver['imagen']; ?>" width="120px" height="120px" alt=""></td>
                                 <td><?php echo $ver['nombre']; ?></td>
                                 <td><?php echo '$ '.$ver['precio']; ?></td>
-                                <td><button class="btn btn-outline-success" onclick="agregarCarrito(<?php echo $iduser; ?>,<?php echo $ver['id_comida']; ?>)">Agregar al pedido</button></td>
-                            </tr>
+                                <td><button class="btn btn-outline-success"
+                                 onclick="agregarCarrito(
+                                     <?php echo $iduser; ?>,<?php echo $ver['id_comida']; ?>,
+                                     '<?php echo $ver['nombre']; ?>','<?php echo $ver['precio']; ?>',
+                                     '<?php echo $ver['categoria']; ?>','<?php echo $ver['subcategoria']; ?>',
+                                     '<?php echo $ver['imagen']; ?>'
+                                     )">Agregar al pedido</button></td>
                         <?php
                             $i++;
                         }
@@ -78,7 +83,13 @@ $iduser=$_SESSION['datos_login']['id_usuario'];
                             <td><img src="images/cartelera/<?php echo $ver['imagen']; ?>" width="120px" height="120px" alt=""></td>
                                 <td><?php echo $ver['nombre']; ?></td>
                                 <td><?php echo '$ '.$ver['precio']; ?></td>
-                                <td><button class="btn btn-outline-success" onclick="agregarCarrito(<?php echo $iduser; ?>,<?php echo $ver['id_comida']; ?>)">Agregar al pedido</button></td>
+                                <td><button class="btn btn-outline-success"
+                                 onclick="agregarCarrito(
+                                     <?php echo $iduser; ?>,<?php echo $ver['id_comida']; ?>,
+                                     '<?php echo $ver['nombre']; ?>','<?php echo $ver['precio']; ?>',
+                                     '<?php echo $ver['categoria']; ?>','<?php echo $ver['subcategoria']; ?>',
+                                     '<?php echo $ver['imagen']; ?>'
+                                     )">Agregar al pedido</button></td>
                             </tr>
                         <?php
                             $i++;
@@ -92,10 +103,16 @@ $iduser=$_SESSION['datos_login']['id_usuario'];
     </div>
 </div>
 <script>
-    function agregarCarrito(id_user, id_comida) {
+    function agregarCarrito(id_user, id_comida, nombre, precio, categoria,subcategoria,imagen) {
+        // alert(imagen);
         var form = new FormData();
         form.append("id_usuario", id_user);
         form.append("id_comida", id_comida);
+        form.append("nombre", nombre);
+        form.append("precio", precio);
+        form.append("categoria", categoria);
+        form.append("subcategoria", subcategoria);
+        form.append("imagen", imagen);
 
         var settings = {
         "url": "http://localhost/restaurante-salesiano/restaurante/php/crud/gdf/restaurante/carrito.php",
@@ -113,12 +130,11 @@ $iduser=$_SESSION['datos_login']['id_usuario'];
         $.ajax(settings).done(function (response) {
         console.log(response);
         if(response==1){
-            location.href ="http://localhost/restaurante-salesiano/restaurante/pedido.php";
+            alert("Agregado");
+            location.href ="http://localhost/restaurante-salesiano/restaurante/misPedidos.php";
         }else{
             console.log('error');
         }
         });
     }
 </script>
-<!--  -->
-<!-- modal ver -->

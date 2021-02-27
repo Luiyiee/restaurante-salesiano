@@ -1,18 +1,20 @@
 <?php
 include_once 'configuracion/conexion.php';
-$iduser=$_SESSION['datos_login']['email'];
+$iduser=$_SESSION['datos_login']['id_usuario'];
 
-$sql_pedidos = "SELECT count(*) total_pedidos FROM tb_pedidos where notificacion = '1' and idusuario = '$iduser' ";
+$sql_pedidos = "SELECT count(*) total_pedidos FROM tb_pedidos where notificacion = '0' and estado = 'Despachar' and idusuario = '$iduser' ";
 $result_pedidos      = mysqli_query($conexion, $sql_pedidos);
 $total_pedidos  = mysqli_fetch_assoc($result_pedidos);
 
 
-$select_facturas = "SELECT count(*) total_facturas FROM tb_facturas where notificacion = '1' and idusuario = '$iduser' ";
-$result_facturas      = mysqli_query($conexion, $select_facturas);
-$total_facturas  = mysqli_fetch_assoc($result_facturas);
 
 
-$total_notificaciones = $total_pedidos['total_pedidos'] + $total_facturas['total_facturas'];
+// $select_facturas = "SELECT count(*) total_facturas FROM tb_facturas where notificacion = '1' and idusuario = '$iduser' ";
+// $result_facturas      = mysqli_query($conexion, $select_facturas);
+// $total_facturas  = mysqli_fetch_assoc($result_facturas);
+
+
+$total_notificaciones = $total_pedidos['total_pedidos'];
 ?>
 <script type="text/javascript">
   function edt_id(id) {
@@ -38,7 +40,7 @@ $total_notificaciones = $total_pedidos['total_pedidos'] + $total_facturas['total
 
     <ul class="navbar-nav align-items-center right-nav-link">
 
-      <li class="nav-item dropdown-lg">
+      <!-- <li class="nav-item dropdown-lg">
         <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
           <i class="fa fa-bell-o"></i><span class="badge badge-info badge"> <?php echo $total_notificaciones ?> </span></a>
         <div class="dropdown-menu dropdown-menu-right">
@@ -52,28 +54,16 @@ $total_notificaciones = $total_pedidos['total_pedidos'] + $total_facturas['total
                 <div class="media">
                   <i class="zmdi zmdi-accounts fa-2x mr-3 text-info"></i>
                   <div class="media-body">
-                    <h6 class="mt-0 msg-title">  <?php echo $total_pedidos['total_pedidos']; ?> <a href="notificacion-pendientes-cliente.php"> ver pedidos </a>  </h6>
-                    <!-- <p class="msg-info">Lorem ipsum dolor sit amet...</p> -->
-                 </div>
+                    <!-<h6 class="mt-0 msg-title">  <php echo $total_pedidos['total_pedidos']; ?> <a href="notificacion-pendientes-clientes.php"> ver pedidos </a>  </h6> 
+                 
                 </div>
               </a>
             </li>
           
-            <li class="list-group-item">
-              <a href="javaScript:void();">
-                <div class="media">
-                  <i class="zmdi zmdi-notifications-active fa-2x mr-3 text-danger"></i>
-                  <div class="media-body">
-                    <h6 class="mt-0 msg-title"> <?php echo $total_facturas['total_facturas']; ?> <a href="notificacion-facturas-cliente.php"> ver facturas </a> </h6>
-                    <!-- <p class="msg-info">Lorem ipsum dolor sit amet...</p> -->
-                  </div>
-                </div>
-              </a>
-            </li>
-           
+         
           </ul>
         </div>
-      </li>
+      </li> -->
 
       <!--  -->
   

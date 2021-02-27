@@ -1,7 +1,7 @@
 <!--Start sidebar-wrapper-->
 <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
   <div class="brand-logo">
-    <a href="index.html">
+    <a href="inicio.php">
 
       <!-- <img src="images/logo.jpg" class="logo-icon" alt="logo icon"> -->
       <h5 class="logo-text"> RESTAURANTE SALESIANO</h5>

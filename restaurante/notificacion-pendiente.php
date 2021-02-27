@@ -1,12 +1,9 @@
 <?php
 
 include_once 'php/configuracion/conexion.php';
-$iduser=$_SESSION['datos_login']['email'];
-
 $conexion = conexion();
-
-     $fila = $conexion->query("UPDATE tb_pedidos set notificacion = '0' where  idusuario = '$iduser' ");
+     $fila = $conexion->query("update tb_pedidos set notificacion = '0' where  notificacion = '1' ");
     // $fila = $conexion->query("update peticiones set notificacion=1 where p_t= 'testimonio' and notificacion =0");
 
-header("Location: pedido.php");
+header("Location: misPedidos.php");
 ?>
