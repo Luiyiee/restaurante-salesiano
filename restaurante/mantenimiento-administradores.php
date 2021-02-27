@@ -244,7 +244,7 @@ include_once './configuracion/conexion.php';
                         <div class="col-sm-6">
                                 <label>cedula</label>
                                 <div class="input-group mb-3">
-                                <input type="text" class="form-control input-sm" id="cedula" name="cedula">
+                                <input type="text" class="form-control input-sm" id="cedulau" name="cedula">
                                 </div>
                             </div>
 
