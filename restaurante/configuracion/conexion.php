@@ -1,5 +1,5 @@
 <?php
-    $servidor="localhost";
+    $servidor="localhost:3306";
     $nombreBd="restaurante";
     $usuario="root";
     $pass="";
